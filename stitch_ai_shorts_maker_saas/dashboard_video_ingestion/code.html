@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary-fixed-variant": "#004e5c", "surface-variant": "#31353d", "primary-fixed-dim": "#4edea3", "secondary-container": "#571bc1", "on-error": "#690005", "on-secondary-fixed": "#23005c", "secondary": "#d0bcff", "on-primary-fixed-variant": "#005236", "on-secondary-container": "#c4abff", "on-primary-fixed": "#002113", "on-background": "#dfe2ed", "surface-tint": "#4edea3", "on-tertiary-container": "#003f4b", "surface-container-high": "#262a32", "surface-container-lowest": "#0a0e15", "on-surface": "#dfe2ed", "on-primary": "#003824", "tertiary": "#4cd7f6", "primary-fixed": "#6ffbbe", "surface-container-highest": "#31353d", "outline": "#86948a", "error-container": "#93000a", "secondary-fixed": "#e9ddff", "on-tertiary-fixed": "#001f26", "inverse-primary": "#006c49", "background": "#0f131b", "error": "#ffb4ab", "on-secondary-fixed-variant": "#5516be", "on-surface-variant": "#bbcabf", "primary": "#4edea3", "on-tertiary": "#003640", "surface-container": "#1c2027", "inverse-surface": "#dfe2ed", "tertiary-fixed-dim": "#4cd7f6", "surface-bright": "#353941", "secondary-fixed-dim": "#d0bcff", "inverse-on-surface": "#2d3038", "tertiary-container": "#00b2d0", "surface-dim": "#0f131b", "on-secondary": "#3c0091", "outline-variant": "#3c4a42", "surface-container-low": "#181c23", "on-primary-container": "#00422b", "on-error-container": "#ffdad6", "surface": "#0f131b", "tertiary-fixed": "#acedff", "primary-container": "#10b981" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-md": "1.5rem", "space-md": "1rem", "space-lg": "1.5rem", "gutter-lg": "1.5rem", "margin": "1rem", "space-xl": "2.5rem", "gutter": "1rem", "margin-lg": "2rem", "space-sm": "0.5rem", "space-xs": "0.25rem" }, "fontFamily": { "code-timestamp": ["JetBrains Mono"], "code-metric": ["JetBrains Mono"], "headline-lg-mobile": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-sm": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-caps": ["JetBrains Mono"], "body-lg": ["Inter"] }, "fontSize": { "code-timestamp": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "code-metric": ["20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.35)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="AI Shorts Maker Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBO5KeKe1aRDNTAKFXBJfCIUP-90zl5UJSWbA_9-AFCAoxZUdSYIHxZCpiNUYMUb-adukMmwnmdf0Ui70njmWimyyYWcYu-vzblWtpPq9jgNqpKCJwApdKYlnl2calptJyq8Snvjoj0hozKtFdtxoOK2g8QdAOLb6JDNpRk3H2RnrYmTHeTwOqr3tCQQRN6cHtWj3uJL7zMgaBgW2ONh-yxRPTfg9VkkGCK1EYIYnU"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">AI Shorts</span></div><span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps uppercase tracking-wider shadow-[0_0_12px_rgba(139,92,246,0.35)]">PRO AI</span></div><nav class="px-space-sm py-space-md flex flex-col gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-semibold shadow-[0_0_16px_-4px_rgba(16,185,129,0.2)]"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard-and-ingestion" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl">dashboard</span><span class="font-body-md text-body-md">Dashboard &amp; Ingestion</span></div><span class="material-symbols-outlined text-xs text-primary">auto_awesome</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="live-processing-pipeline" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl">memory</span><span class="font-body-md text-body-md">Live Processing</span></div><span class="flex items-center gap-1.5 px-space-xs py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-caps text-label-caps"><span class="w-1.5 h-1.5 rounded-full bg-on-primary-container animate-pulse"></span>1 running</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="shorts-studio-editor" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl">movie_filter</span><span class="font-body-md text-body-md">Shorts Studio Editor</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="clips-library-and-export" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl">video_library</span><span class="font-body-md text-body-md">Clips &amp; Export</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="api-and-webhooks" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl">terminal</span><span class="font-body-md text-body-md">API &amp; Webhooks</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings-and-team" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-xl">settings</span><span class="font-body-md text-body-md">Settings &amp; Team</span></div></a></nav></div><div class="p-space-md flex flex-col gap-space-md"><div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-space-xs shadow-[0_1px_8px_rgba(0,0,0,0.2)]"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">GPU Credits</span><span class="font-code-timestamp text-code-timestamp text-primary font-semibold">840 / 1,000</span></div><div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden"><div class="h-full bg-primary-container rounded-full shadow-[0_0_12px_rgba(16,185,129,0.5)]" style="width: 84%"></div></div><div class="flex items-center gap-1.5 pt-space-xs"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span><span class="font-body-sm text-body-sm text-on-surface-variant truncate">Whisper + FFmpeg v6.1 Online</span></div></div><div class="flex items-center justify-between p-space-xs rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors"><div class="flex items-center gap-space-sm min-w-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi2ygA5brtruR64kyo1oYaeNQmOcDRN6KudQ7fza3S-cTyinjbAozhVP_vOLZykbPf6YBsDz_ctS3p1swWEWyGQa86UaftsNcTcv-QDMwtiSeGkgysyeADqhajfM0tDmpM625CU7p7Q0wNrzqQijxnFY7x5_SjfFrvvkrAIsNypcBPZ92dH8gPfhWR_mXR4JjblbVlOvu1aSZg5wcJWv4xRC95uK9o6x4mfWOp1g"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-body-md text-body-md text-on-surface font-semibold truncate">Alex Rivera</span><span class="px-1 rounded bg-secondary-container text-on-secondary-container font-label-caps text-label-caps">PRO</span></div><span class="font-body-sm text-body-sm text-on-surface-variant truncate">@alexcreates</span></div></div><button class="text-on-surface-variant hover:text-on-surface p-1 rounded-lg transition-colors" type="button"><span class="material-symbols-outlined text-base">expand_more</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.2)]"><div class="w-full h-16 px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm"><span class="material-symbols-outlined text-base">home</span><span>/</span><span class="text-on-surface font-medium capitalize">Workspace</span></div><div class="flex-1 max-w-lg hidden md:flex items-center relative"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-base pointer-events-none">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant pl-9 pr-space-md py-1.5 rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container-high transition-all" placeholder="Search clips, viral hooks, transcripts..." type="text"/></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(78,222,163,0.8)]"></span><span class="font-body-sm text-body-sm text-on-surface-variant font-mono">FastAPI Engine: Active</span></div><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface"></span></button><button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-body-md font-semibold hover:brightness-110 shadow-[0_0_20px_-2px_rgba(16,185,129,0.35)] transition-all" type="button"><span class="material-symbols-outlined text-base">add</span><span>New Video</span></button></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg flex flex-col gap-space-xl">
+<!-- Top KPI Grid: High Precision & Glass Elevation -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Metric 1: Videos Ingested -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-space-md shadow-[0_1px_8px_rgba(0,0,0,0.3)] transition-all hover:bg-surface-container-high">
+<div class="absolute -right-6 -top-6 w-24 h-24 rounded-full bg-primary/5 blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Ingested Master Files</span>
+<span class="p-1.5 rounded-lg bg-surface-container-lowest text-primary shadow-inner">
+<span class="material-symbols-outlined text-lg">videocam</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-sm mb-1">
+<span class="font-code-metric text-code-metric text-on-surface">142</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Videos</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-caps text-label-caps text-primary">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+18.4% this month</span>
+</div>
+</div>
+<!-- Metric 2: Shorts Generated -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-space-md shadow-[0_1px_8px_rgba(0,0,0,0.3)] transition-all hover:bg-surface-container-high">
+<div class="absolute -right-6 -top-6 w-24 h-24 rounded-full bg-secondary-container/20 blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Shorts Generated</span>
+<span class="p-1.5 rounded-lg bg-surface-container-lowest text-secondary shadow-inner">
+<span class="material-symbols-outlined text-lg">auto_awesome</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-sm mb-1">
+<span class="font-code-metric text-code-metric text-on-surface">624</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Viral Shorts</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-caps text-label-caps text-secondary">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span>Avg 4.4 per longform</span>
+</div>
+</div>
+<!-- Metric 3: Total Reach -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-space-md shadow-[0_1px_8px_rgba(0,0,0,0.3)] transition-all hover:bg-surface-container-high">
+<div class="absolute -right-6 -top-6 w-24 h-24 rounded-full bg-tertiary-container/10 blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Aggregate Reach</span>
+<span class="p-1.5 rounded-lg bg-surface-container-lowest text-tertiary shadow-inner">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-sm mb-1">
+<span class="font-code-metric text-code-metric text-on-surface">4.8M</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Combined Views</span>
+</div>
+<div class="flex items-center gap-2 font-label-caps text-label-caps text-on-surface-variant">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>TikTok • Shorts • Reels</span>
+</div>
+</div>
+<!-- Metric 4: Human Hours Saved -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-space-md shadow-[0_1px_8px_rgba(0,0,0,0.3)] transition-all hover:bg-surface-container-high">
+<div class="absolute -right-6 -top-6 w-24 h-24 rounded-full bg-primary/10 blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Editor Time Salvaged</span>
+<span class="p-1.5 rounded-lg bg-primary-container text-on-primary-container shadow-[0_0_12px_rgba(16,185,129,0.3)]">
+<span class="material-symbols-outlined text-lg">schedule</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-sm mb-1">
+<span class="font-code-metric text-code-metric text-primary">382</span>
+<span class="font-body-sm text-body-sm text-on-surface">Hours Saved</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-caps text-label-caps text-on-surface-variant">
+<span class="text-primary font-semibold">~$19.1k</span>
+<span>editorial overhead</span>
+</div>
+</div>
+</section>
+<!-- Main Ingestion Command Center & Hook Engine -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-lg items-start">
+<!-- Video Input Studio (Left 8 Cols) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<!-- Surface Card with Neon Rim Glow -->
+<div class="relative rounded-xl bg-surface-container p-space-lg shadow-[0_0_30px_-5px_rgba(0,0,0,0.6)]">
+<!-- Mode Selectors: URL vs Upload -->
+<div class="flex flex-wrap items-center justify-between gap-space-md pb-space-md">
+<div class="inline-flex p-1 rounded-xl bg-surface-container-lowest shadow-inner" id="input-mode-tabs">
+<button class="flex items-center gap-2 px-space-md py-1.5 rounded-lg bg-surface-container-high text-primary font-headline-sm text-body-md font-semibold shadow-[0_0_12px_rgba(16,185,129,0.2)] transition-all" id="tab-btn-url" onclick="switchInputMode('url')" type="button">
+<span class="material-symbols-outlined text-base">link</span>
+<span>Paste Video URL</span>
+</button>
+<button class="flex items-center gap-2 px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-headline-sm text-body-md transition-all" id="tab-btn-file" onclick="switchInputMode('file')" type="button">
+<span class="material-symbols-outlined text-base">cloud_upload</span>
+<span>Upload Video File</span>
+</button>
+</div>
+<!-- Platform Supported Pill Badges -->
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase mr-1">Supported:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest font-code-timestamp text-code-timestamp text-on-surface hover:text-primary transition-colors">YouTube</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest font-code-timestamp text-code-timestamp text-on-surface hover:text-primary transition-colors">Vimeo</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest font-code-timestamp text-code-timestamp text-on-surface hover:text-primary transition-colors">Twitch</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest font-code-timestamp text-code-timestamp text-on-surface hover:text-primary transition-colors">RSS Feed</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest font-code-timestamp text-code-timestamp text-on-surface hover:text-primary transition-colors">X Video</span>
+</div>
+</div>
+<!-- Mode 1: URL Bar View -->
+<div class="flex flex-col gap-space-md" id="view-url">
+<div class="relative flex items-center">
+<div class="absolute left-4 flex items-center gap-2 pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-xl">smart_display</span>
+</div>
+<input class="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md pl-12 pr-32 py-3.5 rounded-xl focus:outline-none focus:bg-surface-container-high transition-all shadow-inner" placeholder="Paste YouTube link, Twitch VOD, or MP4 cloud link..." type="text" value="https://youtube.com/watch?v=kYJvB88fV-s - Huberman Lab #142: Focus &amp; Dopamine Masterclass"/>
+<button class="absolute right-2 px-space-md py-1.5 rounded-lg bg-surface-container-highest hover:bg-surface-bright text-on-surface font-headline-sm text-body-sm transition-all flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-base text-primary">sync</span>
+<span>Fetch</span>
+</button>
+</div>
+</div>
+<!-- Mode 2: Drag and Drop (Hidden by Default) -->
+<div class="hidden flex-col items-center justify-center p-space-xl rounded-xl bg-surface-container-lowest shadow-inner text-center cursor-pointer transition-colors hover:bg-surface-container-low" id="view-file">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center mb-space-sm text-primary shadow-[0_0_16px_rgba(78,222,163,0.15)]">
+<span class="material-symbols-outlined text-3xl">upload_file</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface mb-1">Drag and drop raw footage here</span>
+<span class="font-body-md text-body-md text-on-surface-variant max-w-sm mb-space-md">Direct container ingestion for ProRes, MP4, MOV, and MKV files up to 4GB in size.</span>
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high text-on-surface font-body-md text-body-md hover:bg-surface-bright transition-all" type="button">Browse Local Drives</button>
+</div>
+<!-- Ingested Media Metadata & Auto-Analysis Card -->
+<div class="mt-space-lg rounded-xl bg-surface-container-low p-space-md flex flex-col md:flex-row gap-space-md">
+<!-- Video Thumbnail with 9:16 Safe Frame Projection -->
+<div class="relative w-full md:w-72 shrink-0 aspect-video rounded-lg overflow-hidden bg-surface-container-lowest shadow-[0_0_16px_rgba(0,0,0,0.5)]">
+<img class="w-full h-full object-cover" data-alt="Cinematic podcast studio scene with two high-profile male speakers wearing broadcast headphones at microphone arms under soft moody volumetric studio lighting, deep obsidian background with amber warm fill accents, captured in hyper-realistic 4K broadcast video quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz2HJLtDgBwRp7FHc6XNFP0VFE3av5VWTqjx0cFs8VvgaOf-PX_9wCmLw9IVmgtpnpp6eSHaiFCeSbvRgiOzdfbPGMNbJ15UItacPCaAn4_VX8zDODqePCx_GfSCzVzeeOzrcZsEY68yaxQBjmZNqqQvOb3vZmr6XOSwVNGdlGhnLZeuhnVvO6JoWO4scbqx8VcxT1XGZ5zVZrVz2aj6Sjly5J_Q5LJPRuXUrUAg"/>
+<!-- 9:16 Center Crop Highlight Overlay -->
+<div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[35%] bg-primary/10 shadow-[0_0_20px_rgba(78,222,163,0.3)] pointer-events-none flex flex-col justify-between py-1 px-1">
+<span class="font-label-caps text-label-caps text-primary bg-surface-container-lowest/80 px-1 py-0.5 rounded mx-auto">9:16 Crop</span>
+<span class="material-symbols-outlined text-primary text-xs mx-auto animate-pulse">center_focus_strong</span>
+</div>
+<!-- Badges on Preview -->
+<div class="absolute top-2 left-2 flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur font-label-caps text-label-caps text-on-surface">1080p60</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur font-code-timestamp text-code-timestamp text-primary">Stereo 48kHz</span>
+</div>
+<div class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest font-code-timestamp text-code-timestamp text-on-surface">
+                1:24:18
+              </div>
+</div>
+<!-- Ingest Content Info & Param Toggles -->
+<div class="flex-1 flex flex-col justify-between min-w-0">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps text-label-caps font-semibold">Ready for Ingestion</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">YouTube Master Stream</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate mt-1">Mastering Deep Work &amp; Flow States in the Age of AI Distraction</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Dr. Andrew Huberman &amp; Lex Fridman • 1,248,390 views • Recorded Sept 2024</p>
+</div>
+<!-- Quick Engine Flags -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-xs my-space-sm pt-space-xs">
+<label class="flex items-center gap-2 p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-lowest text-primary-container focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium truncate">Face Track Crop</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant truncate">Speaker autofocus</span>
+</div>
+</label>
+<label class="flex items-center gap-2 p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-lowest text-primary-container focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium truncate">Karaoke Captions</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant truncate">Hormozi / Dynamic</span>
+</div>
+</label>
+<label class="flex items-center gap-2 p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-lowest text-primary-container focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium truncate">Cut Dead Silence</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant truncate">Threshold &gt;0.4s</span>
+</div>
+</label>
+</div>
+<!-- Primary Action CTA -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(78,222,163,0.8)]"></span>
+<span class="font-code-timestamp text-code-timestamp text-on-surface-variant">Whisper AI Large-v3 + FFmpeg 6.1 Online</span>
+</div>
+<button class="flex items-center gap-space-xs px-space-lg py-2.5 rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-body-md font-bold hover:brightness-110 shadow-[0_0_24px_rgba(16,185,129,0.45)] transition-all" type="button">
+<span class="material-symbols-outlined text-lg">bolt</span>
+<span>Analyze &amp; Generate Shorts</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Projects & Batch Ingestion Table -->
+<div class="rounded-xl bg-surface-container p-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.3)]">
+<div class="flex flex-wrap items-center justify-between gap-space-md mb-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">Recent Processing Jobs</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Direct overview of ingested master footage, segmented hooks, and virality scores.</p>
+</div>
+<!-- Filter Pills -->
+<div class="flex items-center gap-1 bg-surface-container-lowest p-1 rounded-lg">
+<button class="px-3 py-1 rounded bg-surface-container-high text-primary font-label-caps text-label-caps font-semibold" type="button">ALL (24)</button>
+<button class="px-3 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps" type="button">READY (19)</button>
+<button class="px-3 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps" type="button">IN PROGRESS (3)</button>
+<button class="px-3 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps" type="button">DRAFTS (2)</button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+<th class="py-space-sm px-space-md rounded-l-lg">Master Source</th>
+<th class="py-space-sm px-space-sm">Duration</th>
+<th class="py-space-sm px-space-sm">Clips Created</th>
+<th class="py-space-sm px-space-sm">Virality Peak</th>
+<th class="py-space-sm px-space-sm">Job Status</th>
+<th class="py-space-sm px-space-md rounded-r-lg text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md divide-none">
+<!-- Row 1: Ready High Virality -->
+<tr class="hover:bg-surface-container-high/60 transition-colors group">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-8 rounded overflow-hidden bg-surface-container-lowest shrink-0 shadow">
+<img class="w-full h-full object-cover" data-alt="Close up interview portrait of podcast host in broadcast studio surrounded by microphone and sound panels under moody dim neon studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZAyMdQH0vnJFA5nNE9UgMQ4ovMxeEF_IBgxA8P4ljmAfOXQtQUdIbU6EDVzKnFrDPn-AdtEBJKvG76SYSXdibIYVHvkB3y5OsLPXr6ghPlj3ZUy6el7SA3SD1fPIgghp1hqXZkzDg7ur7QLBtW85yKwDATCBWmJpBAVerzj6NP-mRZBkY5Qhl_FSj2DIKOQIsW8lv3FdTU574Ct4S6ivZZ-sEsnHodPZlwQTe6w"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-on-surface font-semibold truncate group-hover:text-primary transition-colors">The Joe Rogan Experience #2041</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Uploaded 3 hours ago • YouTube</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-sm font-code-timestamp text-code-timestamp text-on-surface-variant">2:45:10</td>
+<td class="py-space-md px-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="font-code-metric text-headline-sm text-on-surface">6</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">shorts</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-lowest font-code-timestamp text-code-timestamp text-primary shadow-[0_0_10px_rgba(78,222,163,0.2)]">
+<span class="material-symbols-outlined text-xs">local_fire_department</span>
+<span>96/100</span>
+</span>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="px-2.5 py-1 rounded-full bg-primary-container/20 text-primary font-label-caps text-label-caps font-semibold">READY</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container-highest transition-colors" title="Open Shorts Studio" type="button">
+<span class="material-symbols-outlined text-base">movie_filter</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors" title="Export All Clips" type="button">
+<span class="material-symbols-outlined text-base">download</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors" title="Options" type="button">
+<span class="material-symbols-outlined text-base">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: In Progress Pipeline -->
+<tr class="hover:bg-surface-container-high/60 transition-colors group">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-8 rounded overflow-hidden bg-surface-container-lowest shrink-0 shadow relative">
+<img class="w-full h-full object-cover opacity-60" data-alt="Two technology entrepreneurs in deep discussion sitting across a glass coffee table in an ultra minimalist dark tech laboratory, soft diffused key lights, deep atmospheric dark palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdFy1H16LPGqivE9wo2qVDSgClSbBthFj41VPDhc53mgKKM2708hZ6ZU8BTYRv3_AsecWzFQKkMnH8GAnIeWfS-iNqACWeIGZLYJDS4aUTX7BGweeH3Fd3_2BEF6kmsd7e7xQcvfBPJJUeljCBt1r0lcDyxame6jcxM3L2ert18DQ_siGeRrn3pfUvjKwHcmA6IVCYy_6n2V8mBTIpNwWjbFYQU7ULnuQSkkQMtA"/>
+<div class="absolute inset-0 flex items-center justify-center bg-surface-container-lowest/60">
+<span class="material-symbols-outlined text-xs text-primary animate-spin">refresh</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Lex Fridman with Sam Altman (AGI &amp; GPT-5)</span>
+<span class="font-body-sm text-body-sm text-secondary">Step 5/8: Generating Timed Dynamic Captions</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-sm font-code-timestamp text-code-timestamp text-on-surface-variant">1:52:04</td>
+<td class="py-space-md px-space-sm">
+<div class="w-32 flex flex-col gap-1">
+<div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant">
+<span>72%</span>
+<span class="text-secondary">4 detected</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-lowest overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full shadow-[0_0_10px_rgba(139,92,246,0.6)]" style="width: 72%"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant italic">Calculating...</span>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container/20 text-secondary font-label-caps text-label-caps font-semibold flex items-center gap-1 w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+<span>PROCESSING</span>
+</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-error transition-colors" title="Cancel Extraction" type="button">
+<span class="material-symbols-outlined text-base">stop_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Ready Keynote -->
+<tr class="hover:bg-surface-container-high/60 transition-colors group">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-8 rounded overflow-hidden bg-surface-container-lowest shrink-0 shadow">
+<img class="w-full h-full object-cover" data-alt="Vibrant tech summit auditorium stage with large illuminated neon screen displaying economic charts behind a charismatic speaker holding microphone, dark cyber theater aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCulAPEozvgx-VfzSEU7HJiKM1JbWJ8hQll8otRySb9BsmRqs-WbWGucbwAYBBqzmlHHbHp1Q7FV9S5T5OzFTghklpkAoEgWBZB5RurhcKDDMOU1Cv0Q1QaoPEEpNsP4LdpZsRM7XJD49d9TcALGsNyb0CHVKxmTTa-e6MmfCoAe2uilA1LNWqQC8D-O9NDQQ6pUJJOt8rmASOfxqMZQ8E99kv6er2xrvwkb6rBuA"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-on-surface font-semibold truncate group-hover:text-primary transition-colors">All-In Summit 2024 Keynote: The AI Supercycle</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Yesterday • Twitch Stream Dump</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-sm font-code-timestamp text-code-timestamp text-on-surface-variant">3:12:44</td>
+<td class="py-space-md px-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="font-code-metric text-headline-sm text-on-surface">8</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">shorts</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-lowest font-code-timestamp text-code-timestamp text-primary shadow-[0_0_10px_rgba(78,222,163,0.2)]">
+<span class="material-symbols-outlined text-xs">local_fire_department</span>
+<span>94/100</span>
+</span>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="px-2.5 py-1 rounded-full bg-primary-container/20 text-primary font-label-caps text-label-caps font-semibold">READY</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container-highest transition-colors" title="Open Studio" type="button">
+<span class="material-symbols-outlined text-base">movie_filter</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors" title="Export All Clips" type="button">
+<span class="material-symbols-outlined text-base">download</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-base">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: MKBHD Review -->
+<tr class="hover:bg-surface-container-high/60 transition-colors group">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-8 rounded overflow-hidden bg-surface-container-lowest shrink-0 shadow">
+<img class="w-full h-full object-cover" data-alt="High quality technology product review setup featuring sleek futuristic AR headset resting on matte black desk, clean studio lighting with emerald and cyan edge reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJNxvwgHtA01XoQN935TMIqACrY0463VY6lNO1w0WGVWbOPBKNgZNdA7rh4GM4YYNm8SY7u79zsYeskiiO_paSfyeg9K_btPkSNEbR_eT2PSx91wCkgtFNKLcce_q--f73w5DYiw5Z_Km0w9zqh0miK0hjygEh1CK1YgPVovN1f19odCWbA29tQCHHjftTW5THQn2rIz0vPctBYvV8DSvdF3DD65Ezv5kgnHQ8JA"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-on-surface font-semibold truncate group-hover:text-primary transition-colors">MKBHD: The Unfiltered Future of Spatial Computing</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2 days ago • YouTube 4K</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-sm font-code-timestamp text-code-timestamp text-on-surface-variant">0:21:40</td>
+<td class="py-space-md px-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="font-code-metric text-headline-sm text-on-surface">5</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">shorts</span>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-lowest font-code-timestamp text-code-timestamp text-primary shadow-[0_0_10px_rgba(78,222,163,0.2)]">
+<span class="material-symbols-outlined text-xs">local_fire_department</span>
+<span>89/100</span>
+</span>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="px-2.5 py-1 rounded-full bg-primary-container/20 text-primary font-label-caps text-label-caps font-semibold">READY</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-base">movie_filter</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-base">download</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-base">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Column: AI Hook Presets & Conversion Engine Parameters (4 Cols) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- Preset Configuration Box -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-[0_1px_8px_rgba(0,0,0,0.3)] flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">psychology</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Viral Hook Profile</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-caps text-label-caps">PRESET ACTIVE</span>
+</div>
+<!-- Active Preset Card -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Viral Punchy (TikTok / Shorts)</span>
+<span class="font-code-timestamp text-code-timestamp text-primary font-medium">9.2x Retention Avg</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Aggressively targets high-entropy spoken sentences in the first 3 seconds, paired with dramatic contrast zoom-ins.</p>
+</div>
+<!-- Hook Style Toggles -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Enabled Extraction Heuristics:</span>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">priority_high</span>
+<span class="font-body-sm text-body-sm text-on-surface">Contrarian Claims &amp; Debunking</span>
+</div>
+<span class="font-code-timestamp text-code-timestamp text-primary">High Weight</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base">help</span>
+<span class="font-body-sm text-body-sm text-on-surface">Curiosity Gaps &amp; Questions</span>
+</div>
+<span class="font-code-timestamp text-code-timestamp text-secondary">Active</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-base">sentiment_very_dissatisfied</span>
+<span class="font-body-sm text-body-sm text-on-surface">Extreme Emotional Inflections</span>
+</div>
+<span class="font-code-timestamp text-code-timestamp text-tertiary">Active</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">format_list_numbered</span>
+<span class="font-body-sm text-body-sm text-on-surface">Step-by-step Frameworks</span>
+</div>
+<span class="font-code-timestamp text-code-timestamp text-on-surface-variant">Default</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base">attach_money</span>
+<span class="font-body-sm text-body-sm text-on-surface">Financial &amp; Metric Revelations</span>
+</div>
+<span class="font-code-timestamp text-code-timestamp text-secondary">Active</span>
+</div>
+</div>
+<!-- Video Length Window Targets -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Clip Duration Target</span>
+<span class="font-code-timestamp text-code-timestamp text-primary">30s - 58s</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-1.5 rounded bg-surface-container-lowest hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" type="button">&lt; 30s</button>
+<button class="py-1.5 rounded bg-primary-container text-on-primary-container font-body-sm text-body-sm font-semibold shadow-[0_0_10px_rgba(16,185,129,0.3)]" type="button">30s - 60s</button>
+<button class="py-1.5 rounded bg-surface-container-lowest hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" type="button">60s - 90s</button>
+</div>
+</div>
+<!-- Caption Typography Style Selector -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Subtitle Font Preset</span>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded bg-secondary-container flex items-center justify-center font-headline-sm text-body-sm font-bold text-on-secondary-container">H</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm text-on-surface font-bold">Hormozi Pop-Bounce</span>
+<span class="font-body-sm text-body-sm text-primary">Yellow keyphrase / Green impact</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1" type="button">
+<span class="material-symbols-outlined text-base">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Realtime Virality Distribution Chart (SVG Graphic) -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-[0_1px_8px_rgba(0,0,0,0.3)] flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Retention Predictor</span>
+<span class="font-code-timestamp text-code-timestamp text-primary">v4.2 LLM Heuristics</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Estimated viewer drop-off curve for detected clip segments in active buffer:</p>
+<!-- Sparkline / Waveform Graphic -->
+<div class="w-full h-24 rounded-lg bg-surface-container-lowest p-2 flex flex-col justify-end relative overflow-hidden">
+<svg class="w-full h-full text-primary" fill="none" preserveaspectratio="none" viewbox="0 0 300 80">
+<!-- Glow gradient fill below graph -->
+<defs>
+<lineargradient id="primaryGlow" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="currentColor" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="currentColor" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<path d="M 0,15 C 30,10 60,35 90,25 C 120,15 150,55 180,30 C 210,12 240,40 270,18 L 300,20 L 300,80 L 0,80 Z" fill="url(#primaryGlow)"></path>
+<path d="M 0,15 C 30,10 60,35 90,25 C 120,15 150,55 180,30 C 210,12 240,40 270,18 L 300,20" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+</svg>
+<div class="absolute bottom-1.5 left-3 flex items-center gap-1 font-code-timestamp text-code-timestamp text-on-surface-variant">
+<span>0:00 Hook</span>
+</div>
+<div class="absolute bottom-1.5 right-3 flex items-center gap-1 font-code-timestamp text-code-timestamp text-primary font-semibold">
+<span>0:45 Climax (88% Stay)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function switchInputMode(mode) {
+    const urlView = document.getElementById('view-url');
+    const fileView = document.getElementById('view-file');
+    const tabUrl = document.getElementById('tab-btn-url');
+    const tabFile = document.getElementById('tab-btn-file');
+
+    if (mode === 'url') {
+      urlView.classList.remove('hidden');
+      urlView.classList.add('flex');
+      fileView.classList.add('hidden');
+      fileView.classList.remove('flex');
+
+      tabUrl.className = "flex items-center gap-2 px-space-md py-1.5 rounded-lg bg-surface-container-high text-primary font-headline-sm text-body-md font-semibold shadow-[0_0_12px_rgba(16,185,129,0.2)] transition-all";
+      tabFile.className = "flex items-center gap-2 px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-headline-sm text-body-md transition-all";
+    } else {
+      fileView.classList.remove('hidden');
+      fileView.classList.add('flex');
+      urlView.classList.add('hidden');
+      urlView.classList.remove('flex');
+
+      tabFile.className = "flex items-center gap-2 px-space-md py-1.5 rounded-lg bg-surface-container-high text-primary font-headline-sm text-body-md font-semibold shadow-[0_0_12px_rgba(16,185,129,0.2)] transition-all";
+      tabUrl.className = "flex items-center gap-2 px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-headline-sm text-body-md transition-all";
+    }
+  }
+</script></main></div></body></html>
